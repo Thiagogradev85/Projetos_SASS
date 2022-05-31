@@ -1,3 +1,38 @@
+#main-banner .title-container h1, #main-banner .title-container h2 {
+  text-shadow: 3px 2px #000;
+}
+
+.services-container h2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: #fff;
+}
+.btn:hover {
+  border-color: #ff5200;
+  color: #ff5200;
+}
+.btn-primary {
+  background-color: #ff5200;
+  border-color: #ff5200;
+}
+.btn-primary:hover {
+  background-color: transparent;
+}
+.btn-rounded {
+  margin-top: 1rem;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -57,6 +92,47 @@ li {
   font-size: 2rem;
   color: #fff;
   display: none;
+}
+#main-banner .title-container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#main-banner .title-container h2 {
+  font-size: 3rem;
+}
+#main-banner .title-container h1 {
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+.services-container {
+  text-align: center;
+  margin: 2rem;
+  margin-bottom: 2rem;
+}
+.services-container .services-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+}
+.services-container .services-card-container .services-card {
+  width: 30%;
+  margin: 1%;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+.services-container .services-card-container .services-card i {
+  color: #ff5200;
+  font-size: 4rem;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
