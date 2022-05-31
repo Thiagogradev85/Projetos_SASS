@@ -1,6 +1,62 @@
-h1 {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Lato";
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+#main-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/office.jpg");
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+}
+#main-banner .nav-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background-color: #000;
+  z-index: 10;
+}
+#main-banner .nav-container .brand {
+  color: #fff;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+#main-banner .nav-container .brand:hover {
+  color: #ff5200;
+}
+#main-banner .nav-container-navbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#main-banner .nav-container-navbar li {
+  margin: 5px 10px;
+}
+#main-banner .nav-container-navbar li a {
+  color: #fff;
+  transition: 0.3s;
+}
+#main-banner .nav-container-navbar li a:hover {
+  color: #ff5200;
+}
+#main-banner .nav-container .fas.fa-bars {
+  font-size: 2rem;
+  color: #fff;
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
