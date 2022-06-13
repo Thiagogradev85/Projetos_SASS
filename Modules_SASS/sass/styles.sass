@@ -1,0 +1,193 @@
+@use 'sass:color'
+@use 'sass:list'
+@use 'sass:map'
+@use 'sass:math'
+@use 'sass:meta'
+@use 'sass:string'
+
+//Colocando um pouco de vermelho na cor selecionada (#6b717f) com color adjust
+$color-adjust: color.adjust(#6b717f, $red:25)
+$color-adjust-2: color.adjust(#6b717f, $red:25, $blue: 110)
+
+.color-1
+    color: $color-adjust
+    background-color: $color-adjust-2
+#container
+    background-color: orange
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 100%
+    padding: 10px 15px
+    
+@debug color.blue($color-adjust)
+@debug color.blue($color-adjust-2)
+
+//escurecendo a cor selecionada 
+
+$color-scale: color.scale($color-adjust-2, $lightness: -40%)
+$color-scale-2: color.scale($color-adjust-2, $lightness: 40%)
+
+.color-2
+    background-color: $color-scale
+    
+.color-3
+    background-color: $color-scale-2       
+
+.color-4
+    background-color: color.invert(black)           
+    
+.color-5
+    background-color: color.mix(#123123, #4f2f3f)
+
+.color-6
+    background-color: desaturate(#4f1f33, 60% )
+
+.color-7
+    background-color: #4f1f33
+
+    &:hover
+        background-color:  lighten(#4f1f33,60% )
+        cursor: pointer
+
+//criando uma lista (lista no SASS comeca de 1 e não de 0 )
+$lista: 10px, 20px, 30px
+
+@debug $lista
+
+//add valor a uma lista
+$lista: list.append($lista, 40px)
+
+@debug $lista
+
+//indice de um elemento
+@debug list.index($lista, 20px)
+
+//buscar elemento que não existe
+@debug list.index($lista, 50px)
+
+//list com condições
+@if list.index($lista, 10px) == 1
+    $lista: list.append($lista, 50px)
+
+@debug $lista
+
+//Unir listas com Join
+$lista2: 60px, 70px, 80px, 90px, 100px
+
+@debug $lista2
+
+$lista3: list.join($lista,$lista2 )
+
+@debug $lista3
+
+//mostra o numero de elementos de uma lista
+@debug list.length($lista3)
+
+//mostra um elemento por seu indice na lista
+@debug list.nth($lista3, 6)
+
+$font-size-title: list.nth($lista3, 4)
+
+@debug $font-size-title
+
+h1
+    font-size: $font-size-title
+
+//Módulo Map
+
+$m: ('font': 3px, 'color':blue, 'bold':false)
+$n: ('border': 2px solid red, 'transition': 1s)
+
+@debug $m
+@debug $n
+
+$x: map.merge($m,$n)
+
+@debug $x
+
+//pega um elemento especifico pela chave dentro do map
+$border-title: map.get($x, 'border')
+
+@debug $border-title
+
+h1
+    border: $border-title
+
+//verifica se existe uma chave com o valor indicado
+@debug map.has-key($x, 'transition')
+
+@if map.has-key($x, 'transition')
+    h1  
+        transition: map.get($x, 'transition')
+
+//Módulo Math
+
+$pi: math.$pi
+
+@debug $pi
+
+//arredondar numero pra cima ou para baixo
+$z: 3.5
+
+@debug math.ceil($z)
+@debug math.floor($z)
+
+//Maior e menor numero de uma lista
+$a: 1, 2, 3, 4, 5
+
+@debug math.max($a...)
+@debug math.min($a...)
+
+//retorna um numero aleatorio entre 0 e 10
+@debug math.floor(math.random() * 10)
+
+//Módulo Meta
+
+// verifica se uma variavel existe exemplo $a fica como ('a')
+@debug meta.global-variable-exists('a')
+
+//mostra valores dentro de uma lista
+@debug meta.inspect($a)
+
+// Verifica se um Mixin existe
+@mixin test
+    margin: 0
+    padding: 0
+
+@debug meta.mixin-exists('test')
+@debug meta.mixin-exists('test2')
+
+//Valida os tipos de uma variavel
+@debug meta.type-of(2)
+@debug meta.type-of($a)
+@debug meta.type-of(('asd':1))
+@debug meta.type-of('gfaghjafajhg')
+@debug meta.type-of(#fff)
+// string sem aspas
+@debug meta.type-of(bold)
+//string com aspas duplas
+@debug meta.type-of("tesd")
+
+// Módulo String
+
+$frase: "O rato roeu a roupa do rei de Roma"
+
+//Quantos caracteres existem ate o inicio da  string informada
+@debug string.index($frase, 'rei')
+@debug string.index($frase, 'Brasil')
+@debug string.index($frase, 'O')
+
+//Quantos caracteres tem na String
+@debug string.length($frase)
+
+// Transforma a frase em maiuscula ou minuscula
+@debug string.to-lower-case($frase)
+@debug string.to-upper-case($frase)
+
+// Criar um identificador unico
+@debug string.unique-id()
+@debug string.unique-id()
+
+ 

@@ -1,0 +1,56 @@
+.color-1 {
+  color: #84717f;
+  background-color: #8471ed;
+}
+
+#container {
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 10px 15px;
+}
+
+.color-2 {
+  background-color: #3118ba;
+}
+
+.color-3 {
+  background-color: #b5aaf4;
+}
+
+.color-4 {
+  background-color: white;
+}
+
+.color-5 {
+  background-color: #313031;
+}
+
+.color-6 {
+  background-color: #373737;
+}
+
+.color-7 {
+  background-color: #4f1f33;
+}
+.color-7:hover {
+  background-color: #e5bbcd;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h1 {
+  border: 2px solid red;
+}
+
+h1 {
+  transition: 1s;
+}
+
+/*# sourceMappingURL=styles.css.map */
