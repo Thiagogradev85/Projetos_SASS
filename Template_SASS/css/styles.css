@@ -1,0 +1,14 @@
+#container {
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 10px 15px;
+}
+#container h1 {
+  color: black;
+}
+
+/*# sourceMappingURL=styles.css.map */
