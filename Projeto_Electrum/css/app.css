@@ -31,4 +31,12 @@ ul {
   list-style: none;
 }
 
+.header {
+  background-color: #15161d;
+}
+.header-top {
+  background-color: #1e1f29;
+  color: #fff;
+}
+
 /*# sourceMappingURL=app.css.map */
